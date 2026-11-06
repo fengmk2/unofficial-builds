@@ -10,7 +10,6 @@ recipes=(
 
   # Active recipes, ordered by likely popularity
   "headers"
-  "musl"
   "arm64-musl"
   "riscv64"
   "loong64"
@@ -18,12 +17,16 @@ recipes=(
   "x64-glibc-217"           # CentOS 7 + GCC 15/Python built from source
   "x64-pointer-compression" # CentOS 7 + GCC 15/Python built from source
 
+  "musl" # Officially supported, can be dropped after 26 goes EOL
+
   # Legacy recipes, gated to the v22 line only; these sunset when v22 goes EOL
   # (April 2027) unless their toolchains are modernised for v24+. Recipes whose
   # gates exclude all release lines still receiving builds live in
   # ../recipes-archive/.
   "armv6l"                  # major < 24
   "x64-debug"               # major < 24
+
+  "arm64-pointer-compression" # v22.17+, v24.2+, v26
 )
 
 
